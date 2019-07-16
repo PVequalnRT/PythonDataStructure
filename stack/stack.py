@@ -32,9 +32,16 @@ while True:
     menu = int(input("메뉴를 선택해주세요 :"))
 
     if menu == 1:
-        pass
+        data = int(input("데이터를 입력해주세요 :"))
+        node.push(data)
+        print("데이터 입력 성공!", end="\n\n\n")
+
     elif menu == 2:
-        pass
+        result = node.pop()
+        if result == "No Data!":
+            print(result, end="\n\n\n")
+        else:
+            print("삭제된 데이터 : {0}".format(result), end="\n\n\n")
     elif menu == 3:
         pass
     elif menu == 4:
