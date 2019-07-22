@@ -59,3 +59,4 @@ while True:
         node.popAll()
     elif menu == 4:
         print("종료합니다.")
+        break;
