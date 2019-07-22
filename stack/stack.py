@@ -20,6 +20,18 @@ class searchNode:
             temp = self.top
             self.top = temp.downNode
             return temp.data
+    def popAll(self):
+        def popData(temp):
+            if temp.downNode == None:
+                print(temp.data)
+                return
+            else:
+                print(temp.data,end=", ")
+                popData(temp.downNode)
+                temp.downNode = None
+                return
+        popData(self.top)
+
 
 #Menu
 node = searchNode()
@@ -43,6 +55,7 @@ while True:
         else:
             print("삭제된 데이터 : {0}".format(result), end="\n\n\n")
     elif menu == 3:
-        pass
+        print("전체 삭제 및 출력!")
+        node.popAll()
     elif menu == 4:
         pass
