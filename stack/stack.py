@@ -58,4 +58,4 @@ while True:
         print("전체 삭제 및 출력!")
         node.popAll()
     elif menu == 4:
-        pass
+        print("종료합니다.")
