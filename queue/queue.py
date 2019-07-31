@@ -20,6 +20,10 @@ class searchNode:
         data = self.firstNode.data
         self.firstNode = self.firstNode.nextNode
         return data
+    def popAll(self):
+        while self.firstNode != None:
+            self.pop()
+        print("데이터 전체 삭제 완료!")
 
 selectMenu = """1.데이터 추가
 2.데이터 삭제
@@ -34,11 +38,11 @@ while True:
     if menu == 1:
         data = int(input("\n\n데이터를 입력해주세요 : "))
         node.push(data)
+        print("\n\n")
     elif menu == 2:
-        print("삭제 데이터 : {0}".format(node.pop()))
+        print("삭제 데이터 : {0}\n".format(node.pop()))
     elif menu == 3:
-        pass
-        #node.popAll()
+        node.popAll()
     elif menu == 4:
         print("프로그램을 종료합니다.")
         break
