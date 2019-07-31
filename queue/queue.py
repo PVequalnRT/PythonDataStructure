@@ -14,6 +14,12 @@ class searchNode:
             while temp.nextNode != None:
                 temp = temp.nextNode
             temp.nextNode = queueNode(data)
+    def pop(self):
+        if self.firstNode == None:
+            return "No Data!"
+        data = self.firstNode.data
+        self.firstNode = self.firstNode.nextNode
+        return data
 
 selectMenu = """1.데이터 추가
 2.데이터 삭제
@@ -29,8 +35,7 @@ while True:
         data = int(input("\n\n데이터를 입력해주세요 : "))
         node.push(data)
     elif menu == 2:
-        pass
-        #node.pop()
+        print("삭제 데이터 : {0}".format(node.pop()))
     elif menu == 3:
         pass
         #node.popAll()
