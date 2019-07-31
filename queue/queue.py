@@ -5,7 +5,8 @@ class queueNode:
 
 class searchNode:
     def __init__(self):
-        pass
+        self.firstData = None
+
 
 selectMenu = """1.데이터 추가
 2.데이터 삭제
