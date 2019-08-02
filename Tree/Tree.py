@@ -5,28 +5,53 @@ class node:
         self.leftNode = None
 
 class nodeSearch:
-    pass
-
+    def __init__(self):
+        self.root = None
+    def push(self, data):
+        if self.root == None:
+            self.root = node(data)
+        else:
+            temp = self.root
+            while True:
+                if data > temp.data:
+                    if temp.rightNode == None:
+                        temp.rightNode = node(data)
+                        break
+                    else:
+                        temp = temp.rightNode
+                elif data < temp.data:
+                    if temp.leftNode == None:
+                        temp.leftNode = node(data)
+                        break
+                    else:
+                        temp = temp.leftNode
 
 menuIndex = """1.데이터 추가
 2.가장 큰 값 출력
-3.가장 작은 값 출력
-4.내림차순 전체출력
-5.오름차순 전체출력
-6.종료."""
+3.데이터 찾기
+4.가장 작은 값 출력
+5.내림차순 전체출력
+6.오름차순 전체출력
+7.종료."""
 
-menu = int(input("\n메뉴를 선택해주세요 : "))
-rootNode = nodeSearch()
+root = nodeSearch()
 
-if menu == 1:
-    pass
-elif menu == 2:
-    pass
-elif menu == 3:
-    pass
-elif menu == 4:
-    pass
-elif menu == 5:
-    pass
-elif menu == 6:
-    pass
+while True:
+    print(menuIndex)
+    menu = int(input("\n메뉴를 선택해주세요 : "))
+
+    if menu == 1:
+        data = int(input("추가할 데이터 : "))
+        root.push(data)
+    elif menu == 2:
+        pass
+    elif menu == 3:
+        pass
+    elif menu == 4:
+        pass
+    elif menu == 5:
+        pass
+    elif menu == 6:
+        pass
+    elif menu == 7:
+        pass
