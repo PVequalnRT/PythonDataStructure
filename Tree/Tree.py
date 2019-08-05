@@ -36,6 +36,16 @@ class nodeSearch:
             print("No Data!")
         else:
             searchRightNode(self.root)
+    def leastData(self):
+        def searchData(temp):
+            if temp.leftNode == None:
+                print("가장 작은 값 : %d" %temp.data)
+            else:
+                searchData(temp.leftNode)
+        if self.root == None:
+            print("No Data!")
+        else:
+            searchData(self.root)
 
 menuIndex = """1.데이터 추가
 2.가장 큰 값 출력
@@ -57,7 +67,7 @@ while True:
     elif menu == 2:
         root.biggestData()
     elif menu == 3:
-        pass
+        root.leastData()
     elif menu == 4:
         pass
     elif menu == 5:
