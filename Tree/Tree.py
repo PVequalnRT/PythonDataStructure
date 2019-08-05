@@ -33,7 +33,7 @@ class nodeSearch:
             else:
                 searchRightNode(temp.rightNode)
         if self.root == None:
-            return "No Data!"
+            print("No Data!")
         else:
             searchRightNode(self.root)
 
