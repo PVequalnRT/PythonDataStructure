@@ -25,7 +25,6 @@ class nodeSearch:
                         break
                     else:
                         temp = temp.leftNode
-
     def biggestData(self):
         def searchRightNode(temp):
             if temp.rightNode == None:
@@ -46,6 +45,21 @@ class nodeSearch:
             print("No Data!")
         else:
             searchData(self.root)
+    def findData(self, target):
+        temp = self.root
+        while True:
+            if temp == None:
+                print("No Data!")
+                return
+            else:
+                if temp.data == target:
+                    print("데이터가 존재합니다.")
+                    return
+                else:
+                    if temp.data > target:
+                        temp = temp.leftNode
+                    elif temp.data < target:
+                        temp = temp.rightNode
 
 menuIndex = """1.데이터 추가
 2.가장 큰 값 출력
@@ -69,7 +83,8 @@ while True:
     elif menu == 3:
         root.leastData()
     elif menu == 4:
-        pass
+        target = int(input("찾고자 하는 데이터를 입력해주세요 :"))
+        root.findData(target)
     elif menu == 5:
         pass
     elif menu == 6:
